@@ -1,0 +1,36 @@
+{
+    "model" : {
+        "architecture":         "Full Yolo",
+        "input_size":           416,
+        "anchors":              [0.22,0.30, 0.55,0.56, 0.66,0.88, 1.14,1.22, 2.02,2.07],
+        "max_box_per_image":    10,        
+        "labels":               ["nuclei"]
+    },
+
+    "train": {
+        "train_image_folder":   "/Users/dcamacho/raw-data/nuclei_segmentation/stage1_train",
+        "train_annot_folder":   "",
+          
+        "train_times":          10,
+        "pretrained_weights":   "full_yolo_nuclei.h5",
+        "batch_size":           16,
+        "learning_rate":        1e-4,
+        "nb_epoch":             0,
+        "warmup_epochs":        1,
+
+        "object_scale":         5.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+
+        "saved_weights_name":   "test_yolo_nuclei.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+
+        "valid_times":          1
+    }
+}
